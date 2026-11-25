@@ -1,0 +1,10 @@
+# Python toolbox and its leftovers
+.venv/
+__pycache__/
+*.pyc
+
+# Mac system files
+.DS_Store
+
+# Secrets, just in case one is ever saved to a file
+.env
