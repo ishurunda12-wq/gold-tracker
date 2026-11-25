@@ -218,13 +218,15 @@ def load_previous():
         with open("prices.json") as file:
             old = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
-        return {}
+        return {}, set()
     previous = {}
     for row in old.get("sellers", []):
         # Older files had no price_checked_at, so fall back to when that file was saved
         row.setdefault("price_checked_at", old.get("updated_at"))
         previous[row["seller"]] = row
-    return previous
+    # Sellers that were already left out last time (so we only alert once)
+    already_dropped = {f["seller"] for f in old.get("failed", []) if f.get("using_last_good_price") is False}
+    return previous, already_dropped
 
 
 # ---------- Run ----------
@@ -239,7 +241,7 @@ def main():
         sellers = list(csv.DictReader(file))
 
     now = datetime.now(IST)
-    previous = load_previous()
+    previous, already_dropped = load_previous()
 
     results, failed, skipped, link_only = [], [], [], []
 
@@ -300,6 +302,10 @@ def main():
         for row in results:
             row["vs_lowest"] = row["per_10g_999"] - lowest
 
+    # Alerts: sellers left out THIS run that were not left out last run
+    dropped_now = [f["seller"] for f in failed if not f["using_last_good_price"]]
+    alerts = [name for name in dropped_now if name not in already_dropped]
+
     output = {
         "updated_at": now.isoformat(timespec="seconds"),
         "mcx": {"contract": contract["contract_id"], "price_per_10g": mcx},
@@ -307,6 +313,7 @@ def main():
         "link_only": link_only,
         "failed": failed,
         "skipped": skipped,
+        "alerts": alerts,
     }
     with open("prices.json", "w") as file:
         json.dump(output, file, indent=2)
@@ -323,6 +330,8 @@ def main():
         print("FAILED:", item["seller"], "->", item["error"], "|", status)
     if skipped:
         print("Skipped:", ", ".join(skipped))
+    if alerts:
+        print("ALERT: newly left out ->", ", ".join(alerts))
     print()
     print("Saved prices.json at", output["updated_at"])
 

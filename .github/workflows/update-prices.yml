@@ -57,3 +57,15 @@ jobs:
             git pull --rebase
             git push
           fi
+
+      - name: Alert if a seller newly broke
+        run: |
+          python -c "
+          import json, sys
+          alerts = json.load(open('prices.json')).get('alerts', [])
+          if alerts:
+              print('No price for over 3 hours from:', ', '.join(alerts))
+              print('Check the Run the scraper step above for the error.')
+              sys.exit(1)
+          print('All good')
+          "
