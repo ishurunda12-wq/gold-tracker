@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India Gold Price Tracker | 24K coin prices vs MCX</title>
+  <meta name="description" content="Compare 10g 24K gold coin prices from Indian jewellers against the live MCX gold price.">
+  <!-- Chart.js draws the 1-year chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    /* ---------- 1. Colours and basic layout ---------- */
+    :root {
+      --bg: #faf7f0;
+      --card: #ffffff;
+      --text: #2b2b2b;
+      --muted: #6b6b6b;
+      --gold: #b8860b;
+      --gold-light: #f6edd5;
+      --green: #1e7b4a;
+      --red: #b23b3b;
+      --line: #e6e0d2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1050px; margin: 0 auto; padding: 24px 16px 60px; }
+    h1 { margin: 0 0 4px; font-size: 1.8rem; }
+    h2 { font-size: 1.25rem; margin: 0 0 12px; }
+    .sub { color: var(--muted); margin: 0 0 24px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* ---------- 2. Top summary boxes ---------- */
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .stat { background: var(--gold-light); border-radius: 10px; padding: 16px; }
+    .stat .label { font-size: 0.85rem; color: var(--muted); }
+    .stat .value { font-size: 1.6rem; font-weight: 700; }
+    .stat .small { font-size: 0.85rem; color: var(--muted); }
+
+    /* ---------- 3. Price table ---------- */
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td { padding: 10px 8px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    th { font-size: 0.8rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+    th:nth-child(1), td:nth-child(1), th:nth-child(2), td:nth-child(2) { text-align: left; }
+    td.seller a { color: var(--text); font-weight: 600; text-decoration: none; }
+    td.seller a:hover { color: var(--gold); text-decoration: underline; }
+    td.seller .product { display: block; font-weight: 400; font-size: 0.8rem; color: var(--muted); white-space: normal; }
+    tr.cheapest td { background: #eef7f1; }
+    .badge { display: inline-block; font-size: 0.7rem; padding: 2px 8px; border-radius: 99px; background: var(--green); color: #fff; margin-left: 6px; vertical-align: middle; }
+    .up { color: var(--red); }
+    .zero { color: var(--green); font-weight: 600; }
+    tr.link-only td { color: var(--muted); font-style: italic; }
+    .btn { display: inline-block; padding: 4px 12px; border: 1px solid var(--gold); border-radius: 6px; color: var(--gold); text-decoration: none; font-style: normal; }
+    .btn:hover { background: var(--gold); color: #fff; }
+    .note { font-size: 0.85rem; color: var(--muted); margin-top: 10px; }
+    .warn { background: #fff4e5; border: 1px solid #f0c27a; padding: 10px 14px; border-radius: 8px; font-size: 0.9rem; margin-top: 12px; }
+
+    /* ---------- 4. Chart ---------- */
+    .chart-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .ranges button { border: 1px solid var(--line); background: #fff; padding: 4px 12px; border-radius: 6px; cursor: pointer; }
+    .ranges button.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+    .chart-box { position: relative; height: 320px; margin-top: 12px; }
+
+    /* ---------- 5. How it works ---------- */
+    .how li { margin-bottom: 8px; }
+    code { background: var(--gold-light); padding: 1px 5px; border-radius: 4px; }
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 30px; }
+    footer a { color: var(--gold); }
+    #error { display: none; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>India Gold Price Tracker</h1>
+  <p class="sub">10 gram 24K gold coins from Indian jewellers, compared against the live MCX gold price.</p>
+
+  <!-- Shown only if the data files cannot be loaded -->
+  <div id="error" class="card warn"></div>
+
+  <!-- ===== Section A: live MCX price and last updated ===== -->
+  <div class="card summary">
+    <div class="stat">
+      <div class="label">MCX gold (per 10g, 999)</div>
+      <div class="value" id="mcx-price">Loading...</div>
+      <div class="small" id="mcx-contract"></div>
+    </div>
+    <div class="stat">
+      <div class="label">Cheapest coin right now</div>
+      <div class="value" id="cheapest-price">...</div>
+      <div class="small" id="cheapest-seller"></div>
+    </div>
+    <div class="stat">
+      <div class="label">Last updated</div>
+      <div class="value" id="updated-ago">...</div>
+      <div class="small" id="updated-at"></div>
+    </div>
+  </div>
+
+  <!-- ===== Section B: ranked table ===== -->
+  <div class="card">
+    <h2>Today's prices, best value first</h2>
+    <p class="note" style="margin-top:-6px">Ranked by <b>per 10g at 999</b>, so coins of different purity are compared fairly.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Seller</th>
+            <th>Purity</th>
+            <th>Price (incl. GST)</th>
+            <th>Gold value</th>
+            <th>Markup</th>
+            <th>GST</th>
+            <th>Per 10g at 999</th>
+            <th>vs cheapest</th>
+          </tr>
+        </thead>
+        <tbody id="price-rows"></tbody>
+      </table>
+    </div>
+    <p class="note">
+      <b>Gold value</b> is what the gold in the coin is worth at the MCX price.
+      <b>Markup</b> is everything above that before GST (making charges, dealer margin).
+      <b>Per 10g at 999</b> adjusts 995 coins up to 999 purity so every row is a fair comparison.
+    </p>
+    <div id="failed-box"></div>
+  </div>
+
+  <!-- ===== Section C: 1-year chart ===== -->
+  <div class="card">
+    <div class="chart-head">
+      <h2 style="margin:0">Gold price history (per 10g)</h2>
+      <div class="ranges">
+        <button data-days="30">1M</button>
+        <button data-days="90">3M</button>
+        <button data-days="180">6M</button>
+        <button data-days="365" class="active">1Y</button>
+      </div>
+    </div>
+    <div class="chart-box"><canvas id="history-chart"></canvas></div>
+    <p class="note" id="chart-note"></p>
+  </div>
+
+  <!-- ===== Section D: how it works ===== -->
+  <div class="card how">
+    <h2>How it works</h2>
+    <ol>
+      <li><b>MCX price.</b> Every 30 minutes a script reads the live price of the current MCX Gold Ten contract. This is the wholesale price of 10g of 999 gold in India.</li>
+      <li><b>Jeweller prices.</b> The same script reads the price of a 10g 24K coin from each jeweller's website.</li>
+      <li><b>The maths.</b> Gold value = MCX price / 10 x weight x purity / 999. GST is 3% of the final price. Markup is the final price minus GST minus gold value.</li>
+      <li><b>History.</b> Once a day a second script builds one year of prices from the GOLDBEES gold ETF, scaled to match MCX.</li>
+      <li><b>Hosting.</b> GitHub Actions runs the scripts and saves the results. This page just reads those saved files, so it is free to run.</li>
+    </ol>
+    <p class="note">Prices are for information only. Always confirm the final price on the jeweller's site before buying. Delivery charges and offers are not included.</p>
+  </div>
+
+  <footer>
+    Built by Ishita. Code on <a href="https://github.com/ishurunda12-wq/gold-tracker">GitHub</a>.
+  </footer>
+</div>
+
+<script>
+// ============================================================
+// Helpers
+// ============================================================
+
+// Format a number as Indian rupees, e.g. 121259 -> "₹1,21,259"
+function rupees(n) {
+  return "₹" + Math.round(n).toLocaleString("en-IN");
+}
+
+// Turn a timestamp into "12 min ago", "3 hr ago" etc.
+function timeAgo(date) {
+  const mins = Math.round((Date.now() - date.getTime()) / 60000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return mins + " min ago";
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return hrs + " hr " + (mins % 60) + " min ago";
+  return Math.floor(hrs / 24) + " days ago";
+}
+
+function showError(msg) {
+  const box = document.getElementById("error");
+  box.style.display = "block";
+  box.innerHTML = msg;
+}
+
+// ============================================================
+// Part 1: prices.json -> summary boxes and table
+// ============================================================
+async function loadPrices() {
+  // "?t=" + time stops the browser from showing an old cached copy
+  const res = await fetch("prices.json?t=" + Date.now());
+  if (!res.ok) throw new Error("prices.json not found");
+  const data = await res.json();
+
+  // --- Summary boxes ---
+  document.getElementById("mcx-price").textContent = rupees(data.mcx.price_per_10g);
+  document.getElementById("mcx-contract").textContent = "Contract: " + data.mcx.contract.replace("MCX_", "");
+
+  const updated = new Date(data.updated_at);
+  document.getElementById("updated-ago").textContent = timeAgo(updated);
+  document.getElementById("updated-at").textContent = updated.toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata", dateStyle: "medium", timeStyle: "short"
+  }) + " IST";
+
+  if (data.sellers.length > 0) {
+    const c = data.sellers[0]; // already sorted cheapest first by scraper.py
+    document.getElementById("cheapest-price").textContent = rupees(c.final_price);
+    document.getElementById("cheapest-seller").textContent = c.seller + ", " + c.purity + " purity";
+  }
+
+  // --- Table rows ---
+  const rows = [];
+  data.sellers.forEach((s, i) => {
+    const isCheapest = i === 0;
+    const vs = s.vs_lowest === 0
+      ? '<span class="zero">Cheapest</span>'
+      : '<span class="up">+' + rupees(s.vs_lowest) + '</span>';
+    rows.push(`
+      <tr class="${isCheapest ? "cheapest" : ""}">
+        <td>${i + 1}</td>
+        <td class="seller">
+          <a href="${s.url}" target="_blank" rel="noopener">${s.seller}</a>
+          ${isCheapest ? '<span class="badge">Best price</span>' : ""}
+          <span class="product">${s.product}</span>
+        </td>
+        <td>${s.purity}</td>
+        <td><b>${rupees(s.final_price)}</b></td>
+        <td>${rupees(s.gold_value)}</td>
+        <td>${rupees(s.markup)} (${s.markup_pct}%)</td>
+        <td>${rupees(s.gst)}</td>
+        <td>${rupees(s.per_10g_999)}</td>
+        <td>${vs}</td>
+      </tr>`);
+  });
+
+  // Link-only sellers (Tanishq) go at the bottom
+  (data.link_only || []).forEach(s => {
+    rows.push(`
+      <tr class="link-only">
+        <td>-</td>
+        <td class="seller">
+          <a href="${s.url}" target="_blank" rel="noopener">${s.seller}</a>
+          <span class="product">${s.note}</span>
+        </td>
+        <td colspan="6"></td>
+        <td><a class="btn" href="${s.url}" target="_blank" rel="noopener">Check price</a></td>
+      </tr>`);
+  });
+
+  document.getElementById("price-rows").innerHTML = rows.join("");
+
+  // Sellers that failed this run
+  if (data.failed && data.failed.length > 0) {
+    const names = data.failed.map(f => (typeof f === "string" ? f : f.seller)).join(", ");
+    document.getElementById("failed-box").innerHTML =
+      '<div class="warn">Could not read a price this time from: ' + names + '. They will be tried again in 30 minutes.</div>';
+  }
+}
+
+// ============================================================
+// Part 2: gold_history.csv -> 1-year chart
+// ============================================================
+let allHistory = [];
+let chart = null;
+
+async function loadHistory() {
+  const res = await fetch("gold_history.csv?t=" + Date.now());
+  if (!res.ok) throw new Error("gold_history.csv not found");
+  const text = await res.text();
+
+  // Split into lines, skip the header row, turn "2025-11-25,124941.0" into an object
+  allHistory = text.trim().split("\n").slice(1).map(line => {
+    const [date, price] = line.split(",");
+    return { date: date, price: parseFloat(price) };
+  });
+
+  drawChart(365);
+}
+
+function drawChart(days) {
+  // Keep only the last N days
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - days);
+  const points = allHistory.filter(p => new Date(p.date) >= cutoff);
+
+  const labels = points.map(p => new Date(p.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "2-digit" }));
+  const prices = points.map(p => p.price);
+
+  if (chart) chart.destroy(); // remove the old chart before drawing a new one
+
+  chart = new Chart(document.getElementById("history-chart"), {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Gold per 10g",
+        data: prices,
+        borderColor: "#b8860b",
+        backgroundColor: "rgba(184, 134, 11, 0.12)",
+        fill: true,
+        pointRadius: 0,
+        tension: 0.2,
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => rupees(ctx.parsed.y) } }
+      },
+      scales: {
+        x: { ticks: { maxTicksLimit: 8 }, grid: { display: false } },
+        y: { ticks: { callback: v => rupees(v) } }
+      }
+    }
+  });
+
+  // Simple change summary under the chart
+  if (points.length > 1) {
+    const first = points[0].price, last = points[points.length - 1].price;
+    const pct = ((last - first) / first * 100).toFixed(1);
+    const word = last >= first ? "up" : "down";
+    document.getElementById("chart-note").textContent =
+      `Over this period gold is ${word} ${Math.abs(pct)}%, from ${rupees(first)} to ${rupees(last)}. ` +
+      `History is based on the GOLDBEES ETF scaled to MCX, so it is a close guide, not exact MCX closes.`;
+  }
+}
+
+// Range buttons (1M, 3M, 6M, 1Y)
+document.querySelectorAll(".ranges button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".ranges button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    drawChart(parseInt(btn.dataset.days));
+  });
+});
+
+// ============================================================
+// Start everything
+// ============================================================
+loadPrices().catch(err => showError("Could not load prices: " + err.message +
+  ". If you opened this file by double clicking, run a local server instead (see Step 10)."));
+loadHistory().catch(err => showError("Could not load history: " + err.message));
+</script>
+</body>
+</html>
