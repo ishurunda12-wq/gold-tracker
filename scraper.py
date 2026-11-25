@@ -10,6 +10,7 @@ IST = timezone(timedelta(hours=5, minutes=30))  # India Standard Time
 
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36"
 GST_RATE = 0.03  # GST on gold in India is 3%
+STALE_LIMIT = timedelta(hours=3)  # how long we keep showing a seller's last good price
 
 
 # ---------- Helpers ----------
@@ -209,6 +210,23 @@ def breakdown(final_price, weight_g, purity, mcx_per_10g):
     }
 
 
+# ---------- Last good prices (fallback) ----------
+
+def load_previous():
+    """Read the prices.json from the last run, so a failed seller can reuse its last good price."""
+    try:
+        with open("prices.json") as file:
+            old = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+    previous = {}
+    for row in old.get("sellers", []):
+        # Older files had no price_checked_at, so fall back to when that file was saved
+        row.setdefault("price_checked_at", old.get("updated_at"))
+        previous[row["seller"]] = row
+    return previous
+
+
 # ---------- Run ----------
 
 def main():
@@ -219,6 +237,9 @@ def main():
 
     with open("sellers.csv") as file:
         sellers = list(csv.DictReader(file))
+
+    now = datetime.now(IST)
+    previous = load_previous()
 
     results, failed, skipped, link_only = [], [], [], []
 
@@ -252,9 +273,25 @@ def main():
                 if key in data:
                     value = data[key]
                     row[key] = round(value) if isinstance(value, float) else value
+            row["price_checked_at"] = now.isoformat(timespec="seconds")
             results.append(row)
         except Exception as error:
-            failed.append({"seller": name, "error": str(error)})
+            # Fallback: reuse the last good price if it is less than 3 hours old
+            old = previous.get(name)
+            checked = datetime.fromisoformat(old["price_checked_at"]) if old and old.get("price_checked_at") else None
+            if checked and now - checked <= STALE_LIMIT:
+                row = {key: old[key] for key in ["seller", "product", "url", "weight_g", "purity"]}
+                # Seller price is old, but gold value and markup use today's MCX
+                row.update(breakdown(old["final_price"], row["weight_g"], row["purity"], mcx))
+                for key in ["seller_gold_value", "seller_making", "making_label", "in_stock"]:
+                    if key in old:
+                        row[key] = old[key]
+                row["price_checked_at"] = old["price_checked_at"]
+                row["stale"] = True
+                results.append(row)
+                failed.append({"seller": name, "error": str(error), "using_last_good_price": True})
+            else:
+                failed.append({"seller": name, "error": str(error), "using_last_good_price": False})
 
     # Cheapest first, and how much more each one costs than the cheapest
     results.sort(key=lambda row: row["per_10g_999"])
@@ -264,7 +301,7 @@ def main():
             row["vs_lowest"] = row["per_10g_999"] - lowest
 
     output = {
-        "updated_at": datetime.now(IST).isoformat(timespec="seconds"),
+        "updated_at": now.isoformat(timespec="seconds"),
         "mcx": {"contract": contract["contract_id"], "price_per_10g": mcx},
         "sellers": results,
         "link_only": link_only,
@@ -277,11 +314,13 @@ def main():
     # A tidy summary in the terminal
     print()
     for rank, row in enumerate(results, start=1):
-        print(f"{rank}. {row['seller']:<28} Rs {row['per_10g_999']:>9,}   markup {row['markup_pct']:>4}%   +Rs {row['vs_lowest']:,}")
+        note = "   (last good price from " + row["price_checked_at"][11:16] + ")" if row.get("stale") else ""
+        print(f"{rank}. {row['seller']:<28} Rs {row['per_10g_999']:>9,}   markup {row['markup_pct']:>4}%   +Rs {row['vs_lowest']:,}{note}")
     for item in link_only:
         print("LINK ONLY:", item["seller"], "->", item["note"])
     for item in failed:
-        print("FAILED:", item["seller"], "->", item["error"])
+        status = "showing last good price" if item["using_last_good_price"] else "DROPPED (no price under 3 hours old)"
+        print("FAILED:", item["seller"], "->", item["error"], "|", status)
     if skipped:
         print("Skipped:", ", ".join(skipped))
     print()
