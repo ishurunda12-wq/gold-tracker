@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-25T14:50:42+05:30",
+  "updated_at": "2026-11-25T14:52:07+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 121289.0
+    "price_per_10g": 121259.0
   },
   "sellers": [
     {
@@ -12,9 +12,9 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 130824,
-      "gold_value": 120803,
-      "markup": 6210,
-      "markup_pct": 5.1,
+      "gold_value": 120773,
+      "markup": 6240,
+      "markup_pct": 5.2,
       "gst": 3810,
       "per_10g_999": 131350,
       "seller_gold_value": 122600,
@@ -28,8 +28,8 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 131608,
-      "gold_value": 120803,
-      "markup": 6971,
+      "gold_value": 120773,
+      "markup": 7001,
       "markup_pct": 5.8,
       "gst": 3833,
       "per_10g_999": 132137,
@@ -42,8 +42,8 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 132722,
-      "gold_value": 120803,
-      "markup": 8053,
+      "gold_value": 120773,
+      "markup": 8083,
       "markup_pct": 6.7,
       "gst": 3866,
       "per_10g_999": 133256,
@@ -59,8 +59,8 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 133322,
-      "gold_value": 121289,
-      "markup": 8149,
+      "gold_value": 121259,
+      "markup": 8179,
       "markup_pct": 6.7,
       "gst": 3883,
       "per_10g_999": 133322,
@@ -76,8 +76,8 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 133450,
-      "gold_value": 121289,
-      "markup": 8274,
+      "gold_value": 121259,
+      "markup": 8304,
       "markup_pct": 6.8,
       "gst": 3887,
       "per_10g_999": 133450,
@@ -91,8 +91,8 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 133869,
-      "gold_value": 121289,
-      "markup": 8681,
+      "gold_value": 121259,
+      "markup": 8711,
       "markup_pct": 7.2,
       "gst": 3899,
       "per_10g_999": 133869,
@@ -101,14 +101,28 @@
       "vs_lowest": 2519
     },
     {
+      "seller": "MMTC-PAMP (via Flipkart)",
+      "product": "10g 24K Lakshmi Gold Bar",
+      "url": "https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
+      "weight_g": 10.0,
+      "purity": 999.9,
+      "final_price": 136220,
+      "gold_value": 121368,
+      "markup": 10884,
+      "markup_pct": 9.0,
+      "gst": 3968,
+      "per_10g_999": 136097,
+      "vs_lowest": 4747
+    },
+    {
       "seller": "CaratLane",
       "product": "10g 24K Plain Gold Coin",
       "url": "https://www.caratlane.com/gold-coins/10g-24kt-plain-gold-coin-gc00030-4y0000.html",
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 135592,
-      "gold_value": 120803,
-      "markup": 10839,
+      "gold_value": 120773,
+      "markup": 10869,
       "markup_pct": 9.0,
       "gst": 3949,
       "per_10g_999": 136137,
@@ -123,11 +137,6 @@
       "note": "Tanishq's website blocks automated price reads. Check the price on their site."
     }
   ],
-  "failed": [
-    {
-      "seller": "MMTC-PAMP (via Flipkart)",
-      "error": "429 Client Error: Too Many Requests for url: https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616"
-    }
-  ],
+  "failed": [],
   "skipped": []
 }
