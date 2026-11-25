@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-25T14:52:07+05:30",
+  "updated_at": "2026-11-25T16:17:55+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 121259.0
+    "price_per_10g": 121162.0
   },
   "sellers": [
     {
@@ -11,14 +11,14 @@
       "url": "https://www.pcjeweller.com/products/gcf400010_pc-jeweller-10-gram-24k-(995)-yellow-gold-floral-pattern-rectangular-coin",
       "weight_g": 10.0,
       "purity": 995.0,
-      "final_price": 130824,
-      "gold_value": 120773,
-      "markup": 6240,
-      "markup_pct": 5.2,
-      "gst": 3810,
-      "per_10g_999": 131350,
-      "seller_gold_value": 122600,
-      "seller_making": 4414,
+      "final_price": 129650,
+      "gold_value": 120677,
+      "markup": 5197,
+      "markup_pct": 4.3,
+      "gst": 3776,
+      "per_10g_999": 130171,
+      "seller_gold_value": 121500,
+      "seller_making": 4374,
       "vs_lowest": 0
     },
     {
@@ -28,12 +28,28 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 131608,
-      "gold_value": 120773,
-      "markup": 7001,
-      "markup_pct": 5.8,
+      "gold_value": 120677,
+      "markup": 7098,
+      "markup_pct": 5.9,
       "gst": 3833,
       "per_10g_999": 132137,
-      "vs_lowest": 787
+      "vs_lowest": 1966
+    },
+    {
+      "seller": "Kalyan Jewellers (Candere)",
+      "product": "10g 24K Swastik Gold Coin",
+      "url": "https://www.candere.com/10-gram-24k-swastik-gold-coin.html",
+      "weight_g": 10.0,
+      "purity": 999.0,
+      "final_price": 132465,
+      "gold_value": 121162,
+      "markup": 7445,
+      "markup_pct": 6.1,
+      "gst": 3858,
+      "per_10g_999": 132465,
+      "seller_gold_value": 123660,
+      "seller_making": 4947,
+      "vs_lowest": 2294
     },
     {
       "seller": "Senco Gold",
@@ -42,15 +58,15 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 132722,
-      "gold_value": 120773,
-      "markup": 8083,
-      "markup_pct": 6.7,
+      "gold_value": 120677,
+      "markup": 8179,
+      "markup_pct": 6.8,
       "gst": 3866,
       "per_10g_999": 133256,
       "seller_gold_value": 122720,
       "seller_making": 6136,
       "making_label": "making_charge_value",
-      "vs_lowest": 1906
+      "vs_lowest": 3085
     },
     {
       "seller": "Malabar Gold & Diamonds",
@@ -59,15 +75,15 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 133322,
-      "gold_value": 121259,
-      "markup": 8179,
-      "markup_pct": 6.7,
+      "gold_value": 121162,
+      "markup": 8276,
+      "markup_pct": 6.8,
       "gst": 3883,
       "per_10g_999": 133322,
       "seller_gold_value": 124460,
       "seller_making": 4978,
       "in_stock": true,
-      "vs_lowest": 1972
+      "vs_lowest": 3151
     },
     {
       "seller": "Joyalukkas",
@@ -76,29 +92,13 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 133450,
-      "gold_value": 121259,
-      "markup": 8304,
-      "markup_pct": 6.8,
+      "gold_value": 121162,
+      "markup": 8401,
+      "markup_pct": 6.9,
       "gst": 3887,
       "per_10g_999": 133450,
       "in_stock": true,
-      "vs_lowest": 2100
-    },
-    {
-      "seller": "Kalyan Jewellers (Candere)",
-      "product": "10g 24K Swastik Gold Coin",
-      "url": "https://www.candere.com/10-gram-24k-swastik-gold-coin.html",
-      "weight_g": 10.0,
-      "purity": 999.0,
-      "final_price": 133869,
-      "gold_value": 121259,
-      "markup": 8711,
-      "markup_pct": 7.2,
-      "gst": 3899,
-      "per_10g_999": 133869,
-      "seller_gold_value": 124970,
-      "seller_making": 5000,
-      "vs_lowest": 2519
+      "vs_lowest": 3279
     },
     {
       "seller": "MMTC-PAMP (via Flipkart)",
@@ -106,13 +106,13 @@
       "url": "https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
       "weight_g": 10.0,
       "purity": 999.9,
-      "final_price": 136220,
-      "gold_value": 121368,
-      "markup": 10884,
-      "markup_pct": 9.0,
-      "gst": 3968,
-      "per_10g_999": 136097,
-      "vs_lowest": 4747
+      "final_price": 134950,
+      "gold_value": 121271,
+      "markup": 9748,
+      "markup_pct": 8.0,
+      "gst": 3931,
+      "per_10g_999": 134829,
+      "vs_lowest": 4658
     },
     {
       "seller": "CaratLane",
@@ -121,12 +121,12 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 135592,
-      "gold_value": 120773,
-      "markup": 10869,
-      "markup_pct": 9.0,
+      "gold_value": 120677,
+      "markup": 10966,
+      "markup_pct": 9.1,
       "gst": 3949,
       "per_10g_999": 136137,
-      "vs_lowest": 4787
+      "vs_lowest": 5966
     }
   ],
   "link_only": [
