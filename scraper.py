@@ -229,6 +229,39 @@ def load_previous():
     return previous, already_dropped
 
 
+# ---------- Daily seller history ----------
+
+HISTORY_FILE = "seller_history.csv"
+HISTORY_FIELDS = ["date", "seller", "final_price", "markup", "markup_pct", "per_10g_999", "mcx_per_10g"]
+
+def save_seller_history(results, mcx, now):
+    """Keep one row per seller per day (the latest fresh price of that day)."""
+    today = now.date().isoformat()
+    try:
+        with open(HISTORY_FILE) as file:
+            rows = list(csv.DictReader(file))
+    except FileNotFoundError:
+        rows = []
+    fresh = {row["seller"]: row for row in results if not row.get("stale")}
+    # Drop today's old rows only for sellers we have a fresh price for now
+    rows = [r for r in rows if not (r["date"] == today and r["seller"] in fresh)]
+    for name, row in fresh.items():
+        rows.append({
+            "date": today,
+            "seller": name,
+            "final_price": row["final_price"],
+            "markup": row["markup"],
+            "markup_pct": row["markup_pct"],
+            "per_10g_999": row["per_10g_999"],
+            "mcx_per_10g": round(mcx),
+        })
+    rows.sort(key=lambda r: (r["date"], r["seller"]))
+    with open(HISTORY_FILE, "w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=HISTORY_FIELDS)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 # ---------- Run ----------
 
 def main():
@@ -317,6 +350,7 @@ def main():
     }
     with open("prices.json", "w") as file:
         json.dump(output, file, indent=2)
+    save_seller_history(results, mcx, now)
 
     # A tidy summary in the terminal
     print()
