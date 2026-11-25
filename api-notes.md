@@ -36,16 +36,16 @@ No total given: final = (metal + making - discount) x 1.03
 Checked: computed 130824 matches page price
 
 ## PARKED (come back to these)
-- [ ] Tanishq + MMTC-PAMP: search marketplaces for 10g 24K coin, then pick A (listing), B (swap seller) or C (unavailable) - Step 6
-- [ ] Candere, CaratLane, Joyalukkas: calculate breakup vs MCX - Step 6
-- [ ] - [x] PC Jeweller x-api-key: store as GitHub secret, never in code - Step 8
--- [x] .venv folder must NOT go to GitHub (add a .gitignore file) - Step 8
-- [ ] Malabar: unpack JSON-text fields like {"Gold":"4978.4000"} - Step 6
+- ## PARKED (come back to these)
+- [x] Tanishq + MMTC-PAMP: decided (Tanishq LINK ONLY, MMTC-PAMP via Flipkart, BlueStone added) - Step 6
+- [x] Candere, CaratLane, Joyalukkas: calculate breakup vs MCX - Step 6
+- [x] Malabar: unpack JSON-text fields like {"Gold":"4978.4000"} - Step 6
+- [x] MCX contract rollover: found automatically from Groww's Gold Ten page - Step 6
+- [x] Gold BeES ratio: match MCX price at 3:30 PM IST - Step 6
+- [x] PC Jeweller x-api-key: stored as GitHub secret, never in code - Step 8
+- [x] .venv kept off GitHub via .gitignore - Step 8
+- [ ] Flipkart (MMTC-PAMP) returns 429 from GitHub Actions. Watch a few runs; if always failing, make it LINK ONLY - Step 12
 - [ ] Bonus: jeweller board rates (Tanishq rate page, Malabar getMetalRate) - Step 13
-- [ ] MCX contract rollover (see Step 4) - Step 6
-- [ ] Gold BeES ratio: average over several days instead of today only (evening MCX vs afternoon ETF) - Step 6
-- [ ] .venv folder must NOT go to GitHub (add a .gitignore file) - Step 8
-- [x] Tanishq + MMTC-PAMP: search marketplaces for 10g 24K coin, then pick A (listing), B (swap seller) or C (unavailable) - Step 6
 
 ## MCX Gold Ten (Groww, no login, no checksum needed)
 URL: https://groww.in/v1/api/commodity_fo/v1/tr_live_prices/exchange/MCX/segment/COMMODITY/574842/latest
