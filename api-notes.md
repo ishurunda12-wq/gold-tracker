@@ -36,7 +36,6 @@ No total given: final = (metal + making - discount) x 1.03
 Checked: computed 130824 matches page price
 
 ## PARKED (come back to these)
-- ## PARKED (come back to these)
 - [x] Tanishq + MMTC-PAMP: decided (Tanishq LINK ONLY, MMTC-PAMP via Flipkart, BlueStone added) - Step 6
 - [x] Candere, CaratLane, Joyalukkas: calculate breakup vs MCX - Step 6
 - [x] Malabar: unpack JSON-text fields like {"Gold":"4978.4000"} - Step 6
@@ -51,7 +50,7 @@ Checked: computed 130824 matches page price
 URL: https://groww.in/v1/api/commodity_fo/v1/tr_live_prices/exchange/MCX/segment/COMMODITY/574842/latest
 Headers: Accept, X-APP-ID: growwWeb, x-platform: web, Referer, User-Agent
 Fields: ltp (live, per 10g at 999), open, high, low, close (yesterday)
-574842 = Gold Ten 30 Nov 2026 contract ID. CHANGES at monthly rollover (parked item)
+574842 = Gold Ten 30 Nov 2026 contract ID. Scraper now finds the current one automatically
 Status: tested in Terminal, works
 
 ## MCX Gold Ten intraday chart (Groww, delayed, no login)
@@ -60,4 +59,3 @@ Same headers as latest
 Returns: candles = [[unix_seconds, price], ...] for today only (about 117 points)
 Use for: optional "today" mini chart. NOT for 1-year history (contract too short-lived)
 Status: tested in Terminal, works
-- [x] Gold BeES ratio: average over several days instead of today only (evening MCX vs afternoon ETF) - Step 6
