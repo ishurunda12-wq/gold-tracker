@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "7,37 * * * *"   # every 30 minutes, at :07 and :37 (quieter than :00/:30)
     - cron: "15 10 * * *"    # 10:15 UTC = 3:45 PM IST, daily history refresh
-    workflow_dispatch:          # adds a "Run workflow" button for manual runs
+  workflow_dispatch:          # adds a "Run workflow" button for manual runs
     inputs:
       history:
         description: "Also refresh 1-year history?"
