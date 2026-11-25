@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T00:31:33+05:30",
+  "updated_at": "2026-11-26T01:01:09+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
     "price_per_10g": 121780.0
@@ -19,7 +19,7 @@
       "per_10g_999": 130171,
       "seller_gold_value": 121500,
       "seller_making": 4374,
-      "price_checked_at": "2026-11-26T00:31:33+05:30",
+      "price_checked_at": "2026-11-26T01:01:09+05:30",
       "vs_lowest": 0
     },
     {
@@ -34,7 +34,7 @@
       "markup_pct": 4.4,
       "gst": 3799,
       "per_10g_999": 130948,
-      "price_checked_at": "2026-11-26T00:31:33+05:30",
+      "price_checked_at": "2026-11-26T01:01:09+05:30",
       "vs_lowest": 777
     },
     {
@@ -52,7 +52,7 @@
       "seller_gold_value": 123150,
       "seller_making": 4926,
       "in_stock": true,
-      "price_checked_at": "2026-11-26T00:31:33+05:30",
+      "price_checked_at": "2026-11-26T01:01:09+05:30",
       "vs_lowest": 1747
     },
     {
@@ -68,7 +68,7 @@
       "gst": 3846,
       "per_10g_999": 132047,
       "in_stock": true,
-      "price_checked_at": "2026-11-26T00:31:33+05:30",
+      "price_checked_at": "2026-11-26T01:01:09+05:30",
       "vs_lowest": 1876
     },
     {
@@ -85,7 +85,7 @@
       "per_10g_999": 132465,
       "seller_gold_value": 123660,
       "seller_making": 4947,
-      "price_checked_at": "2026-11-26T00:31:33+05:30",
+      "price_checked_at": "2026-11-26T01:01:09+05:30",
       "vs_lowest": 2294
     },
     {
@@ -103,7 +103,7 @@
       "seller_gold_value": 122720,
       "seller_making": 6136,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-26T00:31:33+05:30",
+      "price_checked_at": "2026-11-26T01:01:09+05:30",
       "vs_lowest": 3085
     },
     {
@@ -118,7 +118,7 @@
       "markup_pct": 7.4,
       "gst": 3908,
       "per_10g_999": 134728,
-      "price_checked_at": "2026-11-26T00:31:33+05:30",
+      "price_checked_at": "2026-11-26T01:01:09+05:30",
       "vs_lowest": 4557
     },
     {
@@ -133,7 +133,7 @@
       "markup_pct": 7.5,
       "gst": 3931,
       "per_10g_999": 134829,
-      "price_checked_at": "2026-11-26T00:31:33+05:30",
+      "price_checked_at": "2026-11-26T01:01:09+05:30",
       "vs_lowest": 4658
     }
   ],
