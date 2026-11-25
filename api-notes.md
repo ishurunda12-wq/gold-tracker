@@ -38,7 +38,8 @@ Checked: computed 130824 matches page price
 ## PARKED (come back to these)
 - [ ] Tanishq + MMTC-PAMP: search marketplaces for 10g 24K coin, then pick A (listing), B (swap seller) or C (unavailable) - Step 6
 - [ ] Candere, CaratLane, Joyalukkas: calculate breakup vs MCX - Step 6
-- [ ] PC Jeweller x-api-key: store as GitHub secret, never in code - Step 8
+- [ ] - [x] PC Jeweller x-api-key: store as GitHub secret, never in code - Step 8
+-- [x] .venv folder must NOT go to GitHub (add a .gitignore file) - Step 8
 - [ ] Malabar: unpack JSON-text fields like {"Gold":"4978.4000"} - Step 6
 - [ ] Bonus: jeweller board rates (Tanishq rate page, Malabar getMetalRate) - Step 13
 - [ ] MCX contract rollover (see Step 4) - Step 6

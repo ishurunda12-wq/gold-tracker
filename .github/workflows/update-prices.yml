@@ -1,0 +1,54 @@
+name: Update gold prices
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+    - cron: "15 10 * * *"    # 10:15 UTC = 3:45 PM IST, daily history refresh
+  workflow_dispatch:          # adds a "Run workflow" button for manual runs
+
+permissions:
+  contents: write             # lets the robot save files back to the repository
+
+concurrency:
+  group: update-prices
+  cancel-in-progress: false   # never run two at once
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install tools
+        run: pip install -r requirements.txt
+
+      - name: Run the scraper
+        env:
+          PCJ_API_KEY: ${{ secrets.PCJ_API_KEY }}
+        run: python scraper.py
+
+      - name: Refresh 1-year history (daily, or when run by hand)
+        if: github.event.schedule == '15 10 * * *' || github.event_name == 'workflow_dispatch'
+        run: python fetch_history.py
+
+      - name: Save new prices
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add prices.json gold_history.csv
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Update prices"
+            git pull --rebase
+            git push
+          fi
