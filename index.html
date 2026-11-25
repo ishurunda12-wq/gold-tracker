@@ -78,6 +78,12 @@
     footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 30px; }
     footer a { color: var(--gold); }
     #error { display: none; }
+
+    /* ---------- 6. Old prices (Step 12) ---------- */
+    .stat.old { background: #fde9cf; }
+    .stat.old .small { color: #9a5b00; font-weight: 600; }
+    tr.stale td { color: var(--muted); }
+    .age-tag { display: inline-block; font-size: 0.72rem; padding: 1px 7px; border-radius: 99px; background: #fde9cf; color: #9a5b00; margin-left: 6px; vertical-align: middle; font-style: normal; }
   </style>
 </head>
 <body>
@@ -216,6 +222,16 @@ async function loadPrices() {
     timeZone: "Asia/Kolkata", dateStyle: "medium", timeStyle: "short"
   }) + " IST";
 
+  // If the robot has not saved new prices for 90+ minutes, colour the box and say so
+  const updatedBox = document.getElementById("updated-ago").parentElement;
+  const minutesOld = (Date.now() - updated.getTime()) / 60000;
+  if (minutesOld > 90) {
+    updatedBox.classList.add("old");
+    document.getElementById("updated-at").textContent += ". Prices may be out of date.";
+  } else {
+    updatedBox.classList.remove("old");
+  }
+
   if (data.sellers.length > 0) {
     const c = data.sellers[0]; // already sorted cheapest first by scraper.py
     document.getElementById("cheapest-price").textContent = rupees(c.final_price);
@@ -230,11 +246,12 @@ async function loadPrices() {
       ? '<span class="zero">Cheapest</span>'
       : '<span class="up">+' + rupees(s.vs_lowest) + '</span>';
     rows.push(`
-      <tr class="${isCheapest ? "cheapest" : ""}">
+      <tr class="${isCheapest ? "cheapest" : ""} ${s.stale ? "stale" : ""}">
         <td>${i + 1}</td>
         <td class="seller">
           <a href="${s.url}" target="_blank" rel="noopener">${s.seller}</a>
           ${isCheapest ? '<span class="badge">Best price</span>' : ""}
+          ${s.stale ? '<span class="age-tag" title="Could not read a fresh price, showing the last good one">Price from ' + timeAgo(new Date(s.price_checked_at)) + '</span>' : ""}
           <span class="product">${s.product}</span>
         </td>
         <td>${s.purity}</td>
@@ -264,11 +281,19 @@ async function loadPrices() {
   document.getElementById("price-rows").innerHTML = rows.join("");
 
   // Sellers that failed this run
-  if (data.failed && data.failed.length > 0) {
-    const names = data.failed.map(f => (typeof f === "string" ? f : f.seller)).join(", ");
-    document.getElementById("failed-box").innerHTML =
-      '<div class="warn">Could not read a price this time from: ' + names + '. They will be tried again in 30 minutes.</div>';
+  const failed = data.failed || [];
+  const usingOld = failed.filter(f => f.using_last_good_price).map(f => f.seller);
+  const dropped = failed.filter(f => !f.using_last_good_price).map(f => f.seller);
+  let warnings = "";
+  if (usingOld.length > 0) {
+    warnings += '<div class="warn">Could not read a fresh price from ' + usingOld.join(", ") +
+      '. Showing their last good price (marked "Price from ...") until the next try.</div>';
   }
+  if (dropped.length > 0) {
+    warnings += '<div class="warn">No recent price from ' + dropped.join(", ") +
+      ' for over 3 hours, so they are left out of the table for now.</div>';
+  }
+  document.getElementById("failed-box").innerHTML = warnings;
 }
 
 // ============================================================
@@ -358,6 +383,9 @@ document.querySelectorAll(".ranges button").forEach(btn => {
 loadPrices().catch(err => showError("Could not load prices: " + err.message +
   ". If you opened this file by double clicking, run a local server instead (see Step 10)."));
 loadHistory().catch(err => showError("Could not load history: " + err.message));
+
+// Re-check for new prices every 5 minutes, so an open tab stays current
+setInterval(() => loadPrices().catch(() => {}), 5 * 60 * 1000);
 </script>
 </body>
 </html>
