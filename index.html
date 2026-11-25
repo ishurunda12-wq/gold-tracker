@@ -84,6 +84,29 @@
     .headline:empty { display: none; }
     .headline .save { color: var(--green); font-weight: 700; }
 
+    /* ---------- 5c. Phones: table becomes cards ---------- */
+    @media (max-width: 640px) {
+      .wrap { padding: 16px 12px 40px; }
+      h1 { font-size: 1.5rem; }
+      .card { padding: 14px; }
+      .table-scroll { overflow-x: visible; }
+      table thead { display: none; }
+      table, tbody, tr, td { display: block; width: 100%; }
+      tbody tr { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; background: #fff; }
+      tbody td { border: none; padding: 3px 0; text-align: right; white-space: normal; display: flex; justify-content: space-between; gap: 12px; }
+      tbody td::before { content: attr(data-label); color: var(--muted); font-size: 0.85rem; text-align: left; }
+      tbody td:first-child { display: none; }
+      tbody td.seller { display: block; text-align: left; padding-bottom: 8px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
+      tbody td.seller::before { content: none; }
+      tbody td.price b { font-size: 1.1rem; }
+      tr.cheapest td { background: transparent; }
+      tr.cheapest { background: #eef7f1; border-color: #bfe0cc; }
+      tr.link-only td.empty { display: none; }
+      tr.link-only td.link-cell { justify-content: flex-start; padding-top: 6px; }
+      tr.link-only td.link-cell::before { content: none; }
+      .chart-box { height: 240px; }
+    }
+
     /* ---------- 6. Old prices (Step 12) ---------- */
     .stat.old { background: #fde9cf; }
     .stat.old .small { color: #9a5b00; font-weight: 600; }
@@ -272,13 +295,13 @@ async function loadPrices() {
           ${s.stale ? '<span class="age-tag" title="Could not read a fresh price, showing the last good one">Price from ' + timeAgo(new Date(s.price_checked_at)) + '</span>' : ""}
           <span class="product">${s.product}</span>
         </td>
-        <td>${s.purity}</td>
-        <td><b>${rupees(s.final_price)}</b></td>
-        <td>${rupees(s.gold_value)}</td>
-        <td>${rupees(s.markup)} (${s.markup_pct}%)</td>
-        <td>${rupees(s.gst)}</td>
-        <td>${rupees(s.per_10g_999)}</td>
-        <td>${vs}</td>
+        <td data-label="Purity">${s.purity}</td>
+        <td data-label="Price (incl. GST)" class="price"><b>${rupees(s.final_price)}</b></td>
+        <td data-label="Gold value">${rupees(s.gold_value)}</td>
+        <td data-label="Markup">${rupees(s.markup)} (${s.markup_pct}%)</td>
+        <td data-label="GST">${rupees(s.gst)}</td>
+        <td data-label="Per 10g at 999">${rupees(s.per_10g_999)}</td>
+        <td data-label="vs cheapest">${vs}</td>
       </tr>`);
   });
 
@@ -291,8 +314,8 @@ async function loadPrices() {
           <a href="${s.url}" target="_blank" rel="noopener">${s.seller}</a>
           <span class="product">${s.note}</span>
         </td>
-        <td colspan="6"></td>
-        <td><a class="btn" href="${s.url}" target="_blank" rel="noopener">Check price</a></td>
+        <td colspan="6" class="empty"></td>
+        <td class="link-cell"><a class="btn" href="${s.url}" target="_blank" rel="noopener">Check price</a></td>
       </tr>`);
   });
 
