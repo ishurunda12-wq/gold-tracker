@@ -43,7 +43,8 @@ Checked: computed 130824 matches page price
 - [x] Gold BeES ratio: match MCX price at 3:30 PM IST - Step 6
 - [x] PC Jeweller x-api-key: stored as GitHub secret, never in code - Step 8
 - [x] .venv kept off GitHub via .gitignore - Step 8
-- [ ] Flipkart (MMTC-PAMP) returns 429 from GitHub Actions. Watch a few runs; if always failing, make it LINK ONLY - Step 12
+- [x] Flipkart (MMTC-PAMP) 429 from GitHub Actions: only sometimes (worked 2 of 3 runs). Kept live, covered by the 3-hour last-good-price fallback - Step 12
+- [ ] Check GitHub's own daily 3:45 PM IST history run (15 10 * * *) fires. If not, add a second cron-job.org job with history "true" - Step 12
 - [ ] Bonus: jeweller board rates (Tanishq rate page, Malabar getMetalRate) - Step 13
 
 ## MCX Gold Ten (Groww, no login, no checksum needed)
@@ -59,3 +60,17 @@ Same headers as latest
 Returns: candles = [[unix_seconds, price], ...] for today only (about 117 points)
 Use for: optional "today" mini chart. NOT for 1-year history (contract too short-lived)
 Status: tested in Terminal, works
+
+## Running on a schedule (cron-job.org + GitHub Actions)
+GitHub's own 30-minute schedule never started on this repo, so cron-job.org triggers the workflow instead.
+Job: "Gold tracker prices", every 30 minutes, POST
+URL: https://api.github.com/repos/ishurunda12-wq/gold-tracker/actions/workflows/update-prices.yml/dispatches
+Headers: Accept: application/vnd.github+json, Authorization: Bearer <token>, X-GitHub-Api-Version: 2022-11-28, Content-Type: application/json
+Body: {"ref":"main","inputs":{"history":"false"}}  (false = skip the 1-year history rebuild)
+Success = 204 No Content. 401 = token wrong or expired.
+Token: fine-grained "cron-job gold-tracker", only this repo, Actions read and write. EXPIRES 24 Nov 2027: regenerate and paste into cron-job.org before then.
+
+## Fallbacks and alerts (Step 12)
+Each seller row has price_checked_at. If a seller fails, its last good price is reused for up to 3 hours (STALE_LIMIT in scraper.py), marked "stale": true.
+After 3 hours it is left out and added to "alerts" once. The workflow's last step fails the run when alerts is not empty, so GitHub emails me.
+Page: "Last updated" turns orange after 90 minutes; stale rows show "Price from ... ago".

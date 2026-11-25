@@ -2,7 +2,7 @@ name: Update gold prices
 
 on:
   schedule:
-    - cron: "7,37 * * * *"   # every 30 minutes, at :07 and :37 (quieter than :00/:30)
+    # Every-30-minute runs come from cron-job.org (see api-notes.md), not from here
     - cron: "15 10 * * *"    # 10:15 UTC = 3:45 PM IST, daily history refresh
   workflow_dispatch:          # adds a "Run workflow" button for manual runs
     inputs:
