@@ -79,6 +79,11 @@
     footer a { color: var(--gold); }
     #error { display: none; }
 
+    /* ---------- 5b. Headline summary ---------- */
+    .headline { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--green); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; font-size: 1.05rem; }
+    .headline:empty { display: none; }
+    .headline .save { color: var(--green); font-weight: 700; }
+
     /* ---------- 6. Old prices (Step 12) ---------- */
     .stat.old { background: #fde9cf; }
     .stat.old .small { color: #9a5b00; font-weight: 600; }
@@ -91,6 +96,9 @@
 
   <h1>India Gold Price Tracker</h1>
   <p class="sub">10 gram 24K gold coins from Indian jewellers, compared against the live MCX gold price.</p>
+
+  <!-- One-line answer for people in a hurry -->
+  <div class="headline" id="headline"></div>
 
   <!-- Shown only if the data files cannot be loaded -->
   <div id="error" class="card warn"></div>
@@ -236,6 +244,16 @@ async function loadPrices() {
     const c = data.sellers[0]; // already sorted cheapest first by scraper.py
     document.getElementById("cheapest-price").textContent = rupees(c.final_price);
     document.getElementById("cheapest-seller").textContent = c.seller + ", " + c.purity + " purity";
+  }
+
+  // --- One-line summary ---
+  if (data.sellers.length > 1) {
+    const best = data.sellers[0];
+    const worst = data.sellers.reduce((a, b) => (b.per_10g_999 > a.per_10g_999 ? b : a));
+    document.getElementById("headline").innerHTML =
+      `Best value today: <b>${best.seller}</b>, charging ${rupees(best.markup)} (${best.markup_pct}%) above the gold value. ` +
+      `Priciest: <b>${worst.seller}</b> at ${worst.markup_pct}%. ` +
+      `<span class="save">Choosing right saves about ${rupees(worst.vs_lowest)} per 10g.</span>`;
   }
 
   // --- Table rows ---
