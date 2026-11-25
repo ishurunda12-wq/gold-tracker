@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-25T18:01:19+05:30",
+  "updated_at": "2026-11-25T18:31:31+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 121152.0
+    "price_per_10g": 120948.0
   },
   "sellers": [
     {
@@ -12,14 +12,30 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 129650,
-      "gold_value": 120667,
-      "markup": 5207,
-      "markup_pct": 4.3,
+      "gold_value": 120464,
+      "markup": 5410,
+      "markup_pct": 4.5,
       "gst": 3776,
       "per_10g_999": 130171,
       "seller_gold_value": 121500,
       "seller_making": 4374,
+      "price_checked_at": "2026-11-25T18:31:31+05:30",
       "vs_lowest": 0
+    },
+    {
+      "seller": "BlueStone",
+      "product": "10g 24K Gold Coin",
+      "url": "https://www.bluestone.com/gold+coins/10-gram-24-kt-gold-coin~5923.html",
+      "weight_g": 10.0,
+      "purity": 995.0,
+      "final_price": 130424,
+      "gold_value": 120464,
+      "markup": 6162,
+      "markup_pct": 5.1,
+      "gst": 3799,
+      "per_10g_999": 130948,
+      "price_checked_at": "2026-11-25T18:31:31+05:30",
+      "vs_lowest": 777
     },
     {
       "seller": "Malabar Gold & Diamonds",
@@ -28,14 +44,15 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 131918,
-      "gold_value": 121152,
-      "markup": 6924,
-      "markup_pct": 5.7,
+      "gold_value": 120948,
+      "markup": 7128,
+      "markup_pct": 5.9,
       "gst": 3842,
       "per_10g_999": 131918,
       "seller_gold_value": 124460,
       "seller_making": 4978,
       "in_stock": true,
+      "price_checked_at": "2026-11-25T18:31:31+05:30",
       "vs_lowest": 1747
     },
     {
@@ -45,27 +62,14 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 132047,
-      "gold_value": 121152,
-      "markup": 7049,
-      "markup_pct": 5.8,
+      "gold_value": 120948,
+      "markup": 7253,
+      "markup_pct": 6.0,
       "gst": 3846,
       "per_10g_999": 132047,
       "in_stock": true,
+      "price_checked_at": "2026-11-25T18:31:31+05:30",
       "vs_lowest": 1876
-    },
-    {
-      "seller": "BlueStone",
-      "product": "10g 24K Gold Coin",
-      "url": "https://www.bluestone.com/gold+coins/10-gram-24-kt-gold-coin~5923.html",
-      "weight_g": 10.0,
-      "purity": 995.0,
-      "final_price": 131608,
-      "gold_value": 120667,
-      "markup": 7108,
-      "markup_pct": 5.9,
-      "gst": 3833,
-      "per_10g_999": 132137,
-      "vs_lowest": 1966
     },
     {
       "seller": "Kalyan Jewellers (Candere)",
@@ -74,13 +78,14 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 132465,
-      "gold_value": 121152,
-      "markup": 7455,
-      "markup_pct": 6.2,
+      "gold_value": 120948,
+      "markup": 7659,
+      "markup_pct": 6.3,
       "gst": 3858,
       "per_10g_999": 132465,
       "seller_gold_value": 123660,
       "seller_making": 4947,
+      "price_checked_at": "2026-11-25T18:31:31+05:30",
       "vs_lowest": 2294
     },
     {
@@ -90,14 +95,15 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 132722,
-      "gold_value": 120667,
-      "markup": 8189,
-      "markup_pct": 6.8,
+      "gold_value": 120464,
+      "markup": 8393,
+      "markup_pct": 7.0,
       "gst": 3866,
       "per_10g_999": 133256,
       "seller_gold_value": 122720,
       "seller_making": 6136,
       "making_label": "making_charge_value",
+      "price_checked_at": "2026-11-25T18:31:31+05:30",
       "vs_lowest": 3085
     },
     {
@@ -107,11 +113,12 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 134189,
-      "gold_value": 120667,
-      "markup": 9614,
-      "markup_pct": 8.0,
+      "gold_value": 120464,
+      "markup": 9817,
+      "markup_pct": 8.1,
       "gst": 3908,
       "per_10g_999": 134728,
+      "price_checked_at": "2026-11-25T18:31:31+05:30",
       "vs_lowest": 4557
     },
     {
@@ -121,11 +128,12 @@
       "weight_g": 10.0,
       "purity": 999.9,
       "final_price": 134950,
-      "gold_value": 121261,
-      "markup": 9758,
-      "markup_pct": 8.0,
+      "gold_value": 121057,
+      "markup": 9962,
+      "markup_pct": 8.2,
       "gst": 3931,
       "per_10g_999": 134829,
+      "price_checked_at": "2026-11-25T18:31:31+05:30",
       "vs_lowest": 4658
     }
   ],
@@ -138,5 +146,6 @@
     }
   ],
   "failed": [],
-  "skipped": []
+  "skipped": [],
+  "alerts": []
 }
