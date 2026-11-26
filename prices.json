@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-26T10:31:20+05:30",
+  "updated_at": "2026-11-26T11:01:07+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 124070.0
+    "price_per_10g": 124100.0
   },
   "sellers": [
     {
@@ -11,32 +11,16 @@
       "url": "https://www.pcjeweller.com/products/gcf400010_pc-jeweller-10-gram-24k-(995)-yellow-gold-floral-pattern-rectangular-coin",
       "weight_g": 10.0,
       "purity": 995.0,
-      "final_price": 129650,
-      "gold_value": 123573,
-      "markup": 2301,
-      "markup_pct": 1.9,
-      "gst": 3776,
-      "per_10g_999": 130171,
-      "seller_gold_value": 121500,
-      "seller_making": 4374,
-      "price_checked_at": "2026-11-26T10:31:20+05:30",
+      "final_price": 132425,
+      "gold_value": 123603,
+      "markup": 4964,
+      "markup_pct": 4.0,
+      "gst": 3857,
+      "per_10g_999": 132957,
+      "seller_gold_value": 124100,
+      "seller_making": 4468,
+      "price_checked_at": "2026-11-26T11:01:07+05:30",
       "vs_lowest": 0
-    },
-    {
-      "seller": "Joyalukkas",
-      "product": "10g 24K Flower Gold Bar",
-      "url": "https://www.joyalukkas.in/10-gram-flower-gold-bar-bn21005636.html",
-      "weight_g": 10.0,
-      "purity": 999.0,
-      "final_price": 132047,
-      "gold_value": 124070,
-      "markup": 4131,
-      "markup_pct": 3.3,
-      "gst": 3846,
-      "per_10g_999": 132047,
-      "in_stock": true,
-      "price_checked_at": "2026-11-26T10:31:20+05:30",
-      "vs_lowest": 1876
     },
     {
       "seller": "Senco Gold",
@@ -45,16 +29,16 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 132722,
-      "gold_value": 123573,
-      "markup": 5283,
+      "gold_value": 123603,
+      "markup": 5253,
       "markup_pct": 4.3,
       "gst": 3866,
       "per_10g_999": 133256,
       "seller_gold_value": 122720,
       "seller_making": 6136,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-26T10:31:20+05:30",
-      "vs_lowest": 3085
+      "price_checked_at": "2026-11-26T11:01:07+05:30",
+      "vs_lowest": 299
     },
     {
       "seller": "BlueStone",
@@ -63,28 +47,29 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 133223,
-      "gold_value": 123573,
-      "markup": 5769,
-      "markup_pct": 4.7,
+      "gold_value": 123603,
+      "markup": 5740,
+      "markup_pct": 4.6,
       "gst": 3880,
       "per_10g_999": 133759,
-      "price_checked_at": "2026-11-26T10:31:20+05:30",
-      "vs_lowest": 3588
+      "price_checked_at": "2026-11-26T11:01:07+05:30",
+      "vs_lowest": 802
     },
     {
-      "seller": "MMTC-PAMP (via Flipkart)",
-      "product": "10g 24K Lakshmi Gold Bar",
-      "url": "https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
+      "seller": "Joyalukkas",
+      "product": "10g 24K Flower Gold Bar",
+      "url": "https://www.joyalukkas.in/10-gram-flower-gold-bar-bn21005636.html",
       "weight_g": 10.0,
-      "purity": 999.9,
-      "final_price": 134950,
-      "gold_value": 124182,
-      "markup": 6838,
+      "purity": 999.0,
+      "final_price": 134853,
+      "gold_value": 124100,
+      "markup": 6825,
       "markup_pct": 5.5,
-      "gst": 3931,
-      "per_10g_999": 134829,
-      "price_checked_at": "2026-11-26T10:31:20+05:30",
-      "vs_lowest": 4658
+      "gst": 3928,
+      "per_10g_999": 134853,
+      "in_stock": true,
+      "price_checked_at": "2026-11-26T11:01:07+05:30",
+      "vs_lowest": 1896
     },
     {
       "seller": "Kalyan Jewellers (Candere)",
@@ -93,15 +78,30 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 135271,
-      "gold_value": 124070,
-      "markup": 7261,
-      "markup_pct": 5.9,
+      "gold_value": 124100,
+      "markup": 7231,
+      "markup_pct": 5.8,
       "gst": 3940,
       "per_10g_999": 135271,
       "seller_gold_value": 126280,
       "seller_making": 5052,
-      "price_checked_at": "2026-11-26T10:31:20+05:30",
-      "vs_lowest": 5100
+      "price_checked_at": "2026-11-26T11:01:07+05:30",
+      "vs_lowest": 2314
+    },
+    {
+      "seller": "MMTC-PAMP (via Flipkart)",
+      "product": "10g 24K Lakshmi Gold Bar",
+      "url": "https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
+      "weight_g": 10.0,
+      "purity": 999.9,
+      "final_price": 137590,
+      "gold_value": 124212,
+      "markup": 9371,
+      "markup_pct": 7.5,
+      "gst": 4007,
+      "per_10g_999": 137466,
+      "price_checked_at": "2026-11-26T11:01:07+05:30",
+      "vs_lowest": 4509
     },
     {
       "seller": "CaratLane",
@@ -110,13 +110,13 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 136996,
-      "gold_value": 123573,
-      "markup": 9433,
+      "gold_value": 123603,
+      "markup": 9403,
       "markup_pct": 7.6,
       "gst": 3990,
       "per_10g_999": 137547,
-      "price_checked_at": "2026-11-26T10:31:20+05:30",
-      "vs_lowest": 7376
+      "price_checked_at": "2026-11-26T11:01:07+05:30",
+      "vs_lowest": 4590
     }
   ],
   "link_only": [
