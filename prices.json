@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-26T19:01:08+05:30",
+  "updated_at": "2026-11-26T19:31:23+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 122621.0
+    "price_per_10g": 122697.0
   },
   "sellers": [
     {
@@ -12,14 +12,14 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 131251,
-      "gold_value": 122130,
-      "markup": 5298,
+      "gold_value": 122206,
+      "markup": 5222,
       "markup_pct": 4.3,
       "gst": 3823,
       "per_10g_999": 131778,
       "seller_gold_value": 123000,
       "seller_making": 4428,
-      "price_checked_at": "2026-11-26T19:01:08+05:30",
+      "price_checked_at": "2026-11-26T19:31:23+05:30",
       "vs_lowest": 0
     },
     {
@@ -29,13 +29,13 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 133686,
-      "gold_value": 122621,
-      "markup": 7171,
+      "gold_value": 122697,
+      "markup": 7095,
       "markup_pct": 5.8,
       "gst": 3894,
       "per_10g_999": 133686,
       "in_stock": true,
-      "price_checked_at": "2026-11-26T19:01:08+05:30",
+      "price_checked_at": "2026-11-26T19:31:23+05:30",
       "vs_lowest": 1908
     },
     {
@@ -45,12 +45,12 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 133223,
-      "gold_value": 122130,
-      "markup": 7213,
-      "markup_pct": 5.9,
+      "gold_value": 122206,
+      "markup": 7137,
+      "markup_pct": 5.8,
       "gst": 3880,
       "per_10g_999": 133759,
-      "price_checked_at": "2026-11-26T19:01:08+05:30",
+      "price_checked_at": "2026-11-26T19:31:23+05:30",
       "vs_lowest": 1981
     },
     {
@@ -60,14 +60,14 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 134104,
-      "gold_value": 122621,
-      "markup": 7577,
-      "markup_pct": 6.2,
+      "gold_value": 122697,
+      "markup": 7501,
+      "markup_pct": 6.1,
       "gst": 3906,
       "per_10g_999": 134104,
       "seller_gold_value": 125190,
       "seller_making": 5009,
-      "price_checked_at": "2026-11-26T19:01:08+05:30",
+      "price_checked_at": "2026-11-26T19:31:23+05:30",
       "vs_lowest": 2326
     },
     {
@@ -77,15 +77,15 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 133587,
-      "gold_value": 122130,
-      "markup": 7566,
-      "markup_pct": 6.2,
+      "gold_value": 122206,
+      "markup": 7490,
+      "markup_pct": 6.1,
       "gst": 3891,
       "per_10g_999": 134124,
       "seller_gold_value": 123520,
       "seller_making": 6176,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-26T19:01:08+05:30",
+      "price_checked_at": "2026-11-26T19:31:23+05:30",
       "vs_lowest": 2346
     },
     {
@@ -95,12 +95,12 @@
       "weight_g": 10.0,
       "purity": 999.9,
       "final_price": 136200,
-      "gold_value": 122731,
-      "markup": 9502,
+      "gold_value": 122808,
+      "markup": 9425,
       "markup_pct": 7.7,
       "gst": 3967,
       "per_10g_999": 136077,
-      "price_checked_at": "2026-11-26T19:01:08+05:30",
+      "price_checked_at": "2026-11-26T19:31:23+05:30",
       "vs_lowest": 4299
     }
   ],
