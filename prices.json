@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-26T19:31:23+05:30",
+  "updated_at": "2026-11-26T20:31:36+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 122697.0
+    "price_per_10g": 123117.0
   },
   "sellers": [
     {
@@ -12,15 +12,33 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 131251,
-      "gold_value": 122206,
-      "markup": 5222,
-      "markup_pct": 4.3,
+      "gold_value": 122624,
+      "markup": 4804,
+      "markup_pct": 3.9,
       "gst": 3823,
       "per_10g_999": 131778,
       "seller_gold_value": 123000,
       "seller_making": 4428,
-      "price_checked_at": "2026-11-26T19:31:23+05:30",
+      "price_checked_at": "2026-11-26T20:31:36+05:30",
       "vs_lowest": 0
+    },
+    {
+      "seller": "Malabar Gold & Diamonds",
+      "product": "10g 24K Laxmi Coin MGLX999P10G",
+      "url": "https://www.malabargoldanddiamonds.com/in/pan-india/en/product/malabar-gold-24k-999-purity-10g-laxmi-coin-mglx999p10g.html?sku=CO-521137&barcode=100036972824",
+      "weight_g": 10.0,
+      "purity": 999.0,
+      "final_price": 133557,
+      "gold_value": 123117,
+      "markup": 6550,
+      "markup_pct": 5.3,
+      "gst": 3890,
+      "per_10g_999": 133557,
+      "seller_gold_value": 124680,
+      "seller_making": 4987,
+      "in_stock": true,
+      "price_checked_at": "2026-11-26T20:31:36+05:30",
+      "vs_lowest": 1779
     },
     {
       "seller": "Joyalukkas",
@@ -29,13 +47,13 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 133686,
-      "gold_value": 122697,
-      "markup": 7095,
-      "markup_pct": 5.8,
+      "gold_value": 123117,
+      "markup": 6675,
+      "markup_pct": 5.4,
       "gst": 3894,
       "per_10g_999": 133686,
       "in_stock": true,
-      "price_checked_at": "2026-11-26T19:31:23+05:30",
+      "price_checked_at": "2026-11-26T20:31:36+05:30",
       "vs_lowest": 1908
     },
     {
@@ -45,12 +63,12 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 133223,
-      "gold_value": 122206,
-      "markup": 7137,
-      "markup_pct": 5.8,
+      "gold_value": 122624,
+      "markup": 6719,
+      "markup_pct": 5.5,
       "gst": 3880,
       "per_10g_999": 133759,
-      "price_checked_at": "2026-11-26T19:31:23+05:30",
+      "price_checked_at": "2026-11-26T20:31:36+05:30",
       "vs_lowest": 1981
     },
     {
@@ -60,14 +78,14 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 134104,
-      "gold_value": 122697,
-      "markup": 7501,
-      "markup_pct": 6.1,
+      "gold_value": 123117,
+      "markup": 7081,
+      "markup_pct": 5.8,
       "gst": 3906,
       "per_10g_999": 134104,
       "seller_gold_value": 125190,
       "seller_making": 5009,
-      "price_checked_at": "2026-11-26T19:31:23+05:30",
+      "price_checked_at": "2026-11-26T20:31:36+05:30",
       "vs_lowest": 2326
     },
     {
@@ -77,15 +95,15 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 133587,
-      "gold_value": 122206,
-      "markup": 7490,
-      "markup_pct": 6.1,
+      "gold_value": 122624,
+      "markup": 7072,
+      "markup_pct": 5.8,
       "gst": 3891,
       "per_10g_999": 134124,
       "seller_gold_value": 123520,
       "seller_making": 6176,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-26T19:31:23+05:30",
+      "price_checked_at": "2026-11-26T20:31:36+05:30",
       "vs_lowest": 2346
     },
     {
@@ -95,12 +113,13 @@
       "weight_g": 10.0,
       "purity": 999.9,
       "final_price": 136200,
-      "gold_value": 122808,
-      "markup": 9425,
-      "markup_pct": 7.7,
+      "gold_value": 123228,
+      "markup": 9005,
+      "markup_pct": 7.3,
       "gst": 3967,
       "per_10g_999": 136077,
       "price_checked_at": "2026-11-26T19:31:23+05:30",
+      "stale": true,
       "vs_lowest": 4299
     }
   ],
@@ -114,14 +133,14 @@
   ],
   "failed": [
     {
-      "seller": "Malabar Gold & Diamonds",
-      "error": "list index out of range",
-      "using_last_good_price": false
-    },
-    {
       "seller": "CaratLane",
       "error": "no price found on the page",
       "using_last_good_price": false
+    },
+    {
+      "seller": "MMTC-PAMP (via Flipkart)",
+      "error": "429 Client Error: Too Many Requests for url: https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
+      "using_last_good_price": true
     }
   ],
   "skipped": [],
