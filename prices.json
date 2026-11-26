@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T06:31:23+05:30",
+  "updated_at": "2026-11-26T07:01:19+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
     "price_per_10g": 121399.0
@@ -19,7 +19,7 @@
       "per_10g_999": 130171,
       "seller_gold_value": 121500,
       "seller_making": 4374,
-      "price_checked_at": "2026-11-26T06:31:23+05:30",
+      "price_checked_at": "2026-11-26T07:01:19+05:30",
       "vs_lowest": 0
     },
     {
@@ -34,7 +34,7 @@
       "markup_pct": 4.7,
       "gst": 3799,
       "per_10g_999": 130948,
-      "price_checked_at": "2026-11-26T06:31:23+05:30",
+      "price_checked_at": "2026-11-26T07:01:19+05:30",
       "vs_lowest": 777
     },
     {
@@ -50,7 +50,7 @@
       "gst": 3846,
       "per_10g_999": 132047,
       "in_stock": true,
-      "price_checked_at": "2026-11-26T06:31:23+05:30",
+      "price_checked_at": "2026-11-26T07:01:19+05:30",
       "vs_lowest": 1876
     },
     {
@@ -67,7 +67,7 @@
       "per_10g_999": 132465,
       "seller_gold_value": 123660,
       "seller_making": 4947,
-      "price_checked_at": "2026-11-26T06:31:23+05:30",
+      "price_checked_at": "2026-11-26T07:01:19+05:30",
       "vs_lowest": 2294
     },
     {
@@ -85,7 +85,7 @@
       "seller_gold_value": 122720,
       "seller_making": 6136,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-26T06:31:23+05:30",
+      "price_checked_at": "2026-11-26T07:01:19+05:30",
       "vs_lowest": 3085
     },
     {
@@ -100,7 +100,7 @@
       "markup_pct": 7.7,
       "gst": 3908,
       "per_10g_999": 134728,
-      "price_checked_at": "2026-11-26T06:31:23+05:30",
+      "price_checked_at": "2026-11-26T07:01:19+05:30",
       "vs_lowest": 4557
     },
     {
@@ -116,6 +116,7 @@
       "gst": 3931,
       "per_10g_999": 134829,
       "price_checked_at": "2026-11-26T06:31:23+05:30",
+      "stale": true,
       "vs_lowest": 4658
     }
   ],
@@ -132,6 +133,11 @@
       "seller": "Malabar Gold & Diamonds",
       "error": "list index out of range",
       "using_last_good_price": false
+    },
+    {
+      "seller": "MMTC-PAMP (via Flipkart)",
+      "error": "429 Client Error: Too Many Requests for url: https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
+      "using_last_good_price": true
     }
   ],
   "skipped": [],
