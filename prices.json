@@ -1,43 +1,10 @@
 {
-  "updated_at": "2026-11-27T10:31:23+05:30",
+  "updated_at": "2026-11-27T11:01:15+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 125952.0
+    "price_per_10g": 126399.0
   },
   "sellers": [
-    {
-      "seller": "PC Jeweller",
-      "product": "10g 24K Floral Rectangular Gold Coin",
-      "url": "https://www.pcjeweller.com/products/gcf400010_pc-jeweller-10-gram-24k-(995)-yellow-gold-floral-pattern-rectangular-coin",
-      "weight_g": 10.0,
-      "purity": 995.0,
-      "final_price": 131251,
-      "gold_value": 125448,
-      "markup": 1980,
-      "markup_pct": 1.6,
-      "gst": 3823,
-      "per_10g_999": 131778,
-      "seller_gold_value": 123000,
-      "seller_making": 4428,
-      "price_checked_at": "2026-11-27T10:31:23+05:30",
-      "vs_lowest": 0
-    },
-    {
-      "seller": "Joyalukkas",
-      "product": "10g 24K Flower Gold Bar",
-      "url": "https://www.joyalukkas.in/10-gram-flower-gold-bar-bn21005636.html",
-      "weight_g": 10.0,
-      "purity": 999.0,
-      "final_price": 133686,
-      "gold_value": 125952,
-      "markup": 3840,
-      "markup_pct": 3.0,
-      "gst": 3894,
-      "per_10g_999": 133686,
-      "in_stock": true,
-      "price_checked_at": "2026-11-27T10:31:23+05:30",
-      "vs_lowest": 1908
-    },
     {
       "seller": "BlueStone",
       "product": "10g 24K Gold Coin",
@@ -45,30 +12,30 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 133223,
-      "gold_value": 125448,
-      "markup": 3895,
-      "markup_pct": 3.1,
+      "gold_value": 125893,
+      "markup": 3450,
+      "markup_pct": 2.7,
       "gst": 3880,
       "per_10g_999": 133759,
-      "price_checked_at": "2026-11-27T10:31:23+05:30",
-      "vs_lowest": 1981
+      "price_checked_at": "2026-11-27T11:01:15+05:30",
+      "vs_lowest": 0
     },
     {
-      "seller": "Kalyan Jewellers (Candere)",
-      "product": "10g 24K Swastik Gold Coin",
-      "url": "https://www.candere.com/10-gram-24k-swastik-gold-coin.html",
+      "seller": "PC Jeweller",
+      "product": "10g 24K Floral Rectangular Gold Coin",
+      "url": "https://www.pcjeweller.com/products/gcf400010_pc-jeweller-10-gram-24k-(995)-yellow-gold-floral-pattern-rectangular-coin",
       "weight_g": 10.0,
-      "purity": 999.0,
-      "final_price": 134104,
-      "gold_value": 125952,
-      "markup": 4246,
-      "markup_pct": 3.4,
-      "gst": 3906,
-      "per_10g_999": 134104,
-      "seller_gold_value": 125190,
-      "seller_making": 5009,
-      "price_checked_at": "2026-11-27T10:31:23+05:30",
-      "vs_lowest": 2326
+      "purity": 995.0,
+      "final_price": 133278,
+      "gold_value": 125893,
+      "markup": 3504,
+      "markup_pct": 2.8,
+      "gst": 3882,
+      "per_10g_999": 133814,
+      "seller_gold_value": 124900,
+      "seller_making": 4496,
+      "price_checked_at": "2026-11-27T11:01:15+05:30",
+      "vs_lowest": 55
     },
     {
       "seller": "Senco Gold",
@@ -77,16 +44,49 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 133587,
-      "gold_value": 125448,
-      "markup": 4248,
-      "markup_pct": 3.4,
+      "gold_value": 125893,
+      "markup": 3803,
+      "markup_pct": 3.0,
       "gst": 3891,
       "per_10g_999": 134124,
       "seller_gold_value": 123520,
       "seller_making": 6176,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-27T10:31:23+05:30",
-      "vs_lowest": 2346
+      "price_checked_at": "2026-11-27T11:01:15+05:30",
+      "vs_lowest": 365
+    },
+    {
+      "seller": "Joyalukkas",
+      "product": "10g 24K Flower Gold Bar",
+      "url": "https://www.joyalukkas.in/10-gram-flower-gold-bar-bn21005636.html",
+      "weight_g": 10.0,
+      "purity": 999.0,
+      "final_price": 135560,
+      "gold_value": 126399,
+      "markup": 5213,
+      "markup_pct": 4.1,
+      "gst": 3948,
+      "per_10g_999": 135560,
+      "in_stock": true,
+      "price_checked_at": "2026-11-27T11:01:15+05:30",
+      "vs_lowest": 1801
+    },
+    {
+      "seller": "Kalyan Jewellers (Candere)",
+      "product": "10g 24K Swastik Gold Coin",
+      "url": "https://www.candere.com/10-gram-24k-swastik-gold-coin.html",
+      "weight_g": 10.0,
+      "purity": 999.0,
+      "final_price": 135979,
+      "gold_value": 126399,
+      "markup": 5619,
+      "markup_pct": 4.4,
+      "gst": 3961,
+      "per_10g_999": 135979,
+      "seller_gold_value": 126940,
+      "seller_making": 5079,
+      "price_checked_at": "2026-11-27T11:01:15+05:30",
+      "vs_lowest": 2220
     },
     {
       "seller": "MMTC-PAMP (via Flipkart)",
@@ -95,13 +95,14 @@
       "weight_g": 10.0,
       "purity": 999.9,
       "final_price": 138510,
-      "gold_value": 126065,
-      "markup": 8410,
-      "markup_pct": 6.7,
+      "gold_value": 126513,
+      "markup": 7963,
+      "markup_pct": 6.3,
       "gst": 4034,
       "per_10g_999": 138385,
       "price_checked_at": "2026-11-27T10:31:23+05:30",
-      "vs_lowest": 6607
+      "stale": true,
+      "vs_lowest": 4626
     }
   ],
   "link_only": [
@@ -122,6 +123,11 @@
       "seller": "CaratLane",
       "error": "no price found on the page",
       "using_last_good_price": false
+    },
+    {
+      "seller": "MMTC-PAMP (via Flipkart)",
+      "error": "429 Client Error: Too Many Requests for url: https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
+      "using_last_good_price": true
     }
   ],
   "skipped": [],
