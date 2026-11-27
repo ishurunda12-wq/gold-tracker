@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-27T12:31:30+05:30",
+  "updated_at": "2026-11-27T13:31:26+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 126302.0
+    "price_per_10g": 126289.0
   },
   "sellers": [
     {
@@ -12,33 +12,15 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 133278,
-      "gold_value": 125796,
-      "markup": 3600,
+      "gold_value": 125783,
+      "markup": 3613,
       "markup_pct": 2.9,
       "gst": 3882,
       "per_10g_999": 133814,
       "seller_gold_value": 124900,
       "seller_making": 4496,
-      "price_checked_at": "2026-11-27T12:31:30+05:30",
+      "price_checked_at": "2026-11-27T13:31:26+05:30",
       "vs_lowest": 0
-    },
-    {
-      "seller": "Senco Gold",
-      "product": "10g 24K Laxmi Precious Coin",
-      "url": "https://sencogoldanddiamonds.com/jewellery/10g-laxmi-24k-(995)-yellow-gold-precious-coin",
-      "weight_g": 10.0,
-      "purity": 995.0,
-      "final_price": 133587,
-      "gold_value": 125796,
-      "markup": 3900,
-      "markup_pct": 3.1,
-      "gst": 3891,
-      "per_10g_999": 134124,
-      "seller_gold_value": 123520,
-      "seller_making": 6176,
-      "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-27T12:31:30+05:30",
-      "vs_lowest": 310
     },
     {
       "seller": "BlueStone",
@@ -47,12 +29,12 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 134191,
-      "gold_value": 125796,
-      "markup": 4486,
+      "gold_value": 125783,
+      "markup": 4499,
       "markup_pct": 3.6,
       "gst": 3908,
       "per_10g_999": 134730,
-      "price_checked_at": "2026-11-27T12:31:30+05:30",
+      "price_checked_at": "2026-11-27T13:31:26+05:30",
       "vs_lowest": 916
     },
     {
@@ -62,13 +44,13 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 135560,
-      "gold_value": 126302,
-      "markup": 5310,
+      "gold_value": 126289,
+      "markup": 5323,
       "markup_pct": 4.2,
       "gst": 3948,
       "per_10g_999": 135560,
       "in_stock": true,
-      "price_checked_at": "2026-11-27T12:31:30+05:30",
+      "price_checked_at": "2026-11-27T13:31:26+05:30",
       "vs_lowest": 1746
     },
     {
@@ -78,15 +60,33 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 135979,
-      "gold_value": 126302,
-      "markup": 5716,
+      "gold_value": 126289,
+      "markup": 5729,
       "markup_pct": 4.5,
       "gst": 3961,
       "per_10g_999": 135979,
       "seller_gold_value": 126940,
       "seller_making": 5079,
-      "price_checked_at": "2026-11-27T12:31:30+05:30",
+      "price_checked_at": "2026-11-27T13:31:26+05:30",
       "vs_lowest": 2165
+    },
+    {
+      "seller": "Senco Gold",
+      "product": "10g 24K Laxmi Precious Coin",
+      "url": "https://sencogoldanddiamonds.com/jewellery/10g-laxmi-24k-(995)-yellow-gold-precious-coin",
+      "weight_g": 10.0,
+      "purity": 995.0,
+      "final_price": 136226,
+      "gold_value": 125783,
+      "markup": 6475,
+      "markup_pct": 5.1,
+      "gst": 3968,
+      "per_10g_999": 136774,
+      "seller_gold_value": 125960,
+      "seller_making": 6298,
+      "making_label": "making_charge_value",
+      "price_checked_at": "2026-11-27T13:31:26+05:30",
+      "vs_lowest": 2960
     },
     {
       "seller": "MMTC-PAMP (via Flipkart)",
@@ -94,14 +94,14 @@
       "url": "https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
       "weight_g": 10.0,
       "purity": 999.9,
-      "final_price": 138510,
-      "gold_value": 126416,
-      "markup": 8060,
-      "markup_pct": 6.4,
-      "gst": 4034,
-      "per_10g_999": 138385,
-      "price_checked_at": "2026-11-27T12:31:30+05:30",
-      "vs_lowest": 4571
+      "final_price": 139170,
+      "gold_value": 126403,
+      "markup": 8714,
+      "markup_pct": 6.9,
+      "gst": 4053,
+      "per_10g_999": 139045,
+      "price_checked_at": "2026-11-27T13:31:26+05:30",
+      "vs_lowest": 5231
     }
   ],
   "link_only": [
