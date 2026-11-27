@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-27T15:01:14+05:30",
+  "updated_at": "2026-11-27T15:31:30+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 126952.0
+    "price_per_10g": 126451.0
   },
   "sellers": [
     {
@@ -12,13 +12,13 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 135560,
-      "gold_value": 126952,
-      "markup": 4660,
-      "markup_pct": 3.7,
+      "gold_value": 126451,
+      "markup": 5161,
+      "markup_pct": 4.1,
       "gst": 3948,
       "per_10g_999": 135560,
       "in_stock": true,
-      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "price_checked_at": "2026-11-27T15:31:30+05:30",
       "vs_lowest": 0
     },
     {
@@ -28,14 +28,14 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 135092,
-      "gold_value": 126444,
-      "markup": 4714,
-      "markup_pct": 3.7,
+      "gold_value": 125945,
+      "markup": 5213,
+      "markup_pct": 4.1,
       "gst": 3935,
       "per_10g_999": 135635,
       "seller_gold_value": 126600,
       "seller_making": 4558,
-      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "price_checked_at": "2026-11-27T15:31:30+05:30",
       "vs_lowest": 75
     },
     {
@@ -45,14 +45,14 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 135979,
-      "gold_value": 126952,
-      "markup": 5066,
-      "markup_pct": 4.0,
+      "gold_value": 126451,
+      "markup": 5567,
+      "markup_pct": 4.4,
       "gst": 3961,
       "per_10g_999": 135979,
       "seller_gold_value": 126940,
       "seller_making": 5079,
-      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "price_checked_at": "2026-11-27T15:31:30+05:30",
       "vs_lowest": 419
     },
     {
@@ -62,12 +62,12 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 135537,
-      "gold_value": 126444,
-      "markup": 5146,
-      "markup_pct": 4.1,
+      "gold_value": 125945,
+      "markup": 5645,
+      "markup_pct": 4.5,
       "gst": 3948,
       "per_10g_999": 136082,
-      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "price_checked_at": "2026-11-27T15:31:30+05:30",
       "vs_lowest": 522
     },
     {
@@ -77,15 +77,15 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 136226,
-      "gold_value": 126444,
-      "markup": 5815,
-      "markup_pct": 4.6,
+      "gold_value": 125945,
+      "markup": 6314,
+      "markup_pct": 5.0,
       "gst": 3968,
       "per_10g_999": 136774,
       "seller_gold_value": 125960,
       "seller_making": 6298,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "price_checked_at": "2026-11-27T15:31:30+05:30",
       "vs_lowest": 1214
     },
     {
@@ -95,12 +95,13 @@
       "weight_g": 10.0,
       "purity": 999.9,
       "final_price": 139170,
-      "gold_value": 127066,
-      "markup": 8050,
-      "markup_pct": 6.3,
+      "gold_value": 126565,
+      "markup": 8552,
+      "markup_pct": 6.8,
       "gst": 4053,
       "per_10g_999": 139045,
       "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "stale": true,
       "vs_lowest": 3485
     }
   ],
@@ -122,6 +123,11 @@
       "seller": "CaratLane",
       "error": "no price found on the page",
       "using_last_good_price": false
+    },
+    {
+      "seller": "MMTC-PAMP (via Flipkart)",
+      "error": "429 Client Error: Too Many Requests for url: https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
+      "using_last_good_price": true
     }
   ],
   "skipped": [],
