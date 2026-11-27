@@ -1,27 +1,10 @@
 {
-  "updated_at": "2026-11-27T14:31:31+05:30",
+  "updated_at": "2026-11-27T15:01:14+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
-    "price_per_10g": 126929.0
+    "price_per_10g": 126952.0
   },
   "sellers": [
-    {
-      "seller": "PC Jeweller",
-      "product": "10g 24K Floral Rectangular Gold Coin",
-      "url": "https://www.pcjeweller.com/products/gcf400010_pc-jeweller-10-gram-24k-(995)-yellow-gold-floral-pattern-rectangular-coin",
-      "weight_g": 10.0,
-      "purity": 995.0,
-      "final_price": 133278,
-      "gold_value": 126421,
-      "markup": 2976,
-      "markup_pct": 2.4,
-      "gst": 3882,
-      "per_10g_999": 133814,
-      "seller_gold_value": 124900,
-      "seller_making": 4496,
-      "price_checked_at": "2026-11-27T14:31:31+05:30",
-      "vs_lowest": 0
-    },
     {
       "seller": "Joyalukkas",
       "product": "10g 24K Flower Gold Bar",
@@ -29,14 +12,31 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 135560,
-      "gold_value": 126929,
-      "markup": 4683,
+      "gold_value": 126952,
+      "markup": 4660,
       "markup_pct": 3.7,
       "gst": 3948,
       "per_10g_999": 135560,
       "in_stock": true,
-      "price_checked_at": "2026-11-27T14:31:31+05:30",
-      "vs_lowest": 1746
+      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "vs_lowest": 0
+    },
+    {
+      "seller": "PC Jeweller",
+      "product": "10g 24K Floral Rectangular Gold Coin",
+      "url": "https://www.pcjeweller.com/products/gcf400010_pc-jeweller-10-gram-24k-(995)-yellow-gold-floral-pattern-rectangular-coin",
+      "weight_g": 10.0,
+      "purity": 995.0,
+      "final_price": 135092,
+      "gold_value": 126444,
+      "markup": 4714,
+      "markup_pct": 3.7,
+      "gst": 3935,
+      "per_10g_999": 135635,
+      "seller_gold_value": 126600,
+      "seller_making": 4558,
+      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "vs_lowest": 75
     },
     {
       "seller": "Kalyan Jewellers (Candere)",
@@ -45,15 +45,15 @@
       "weight_g": 10.0,
       "purity": 999.0,
       "final_price": 135979,
-      "gold_value": 126929,
-      "markup": 5089,
+      "gold_value": 126952,
+      "markup": 5066,
       "markup_pct": 4.0,
       "gst": 3961,
       "per_10g_999": 135979,
       "seller_gold_value": 126940,
       "seller_making": 5079,
-      "price_checked_at": "2026-11-27T14:31:31+05:30",
-      "vs_lowest": 2165
+      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "vs_lowest": 419
     },
     {
       "seller": "BlueStone",
@@ -62,13 +62,13 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 135537,
-      "gold_value": 126421,
-      "markup": 5169,
+      "gold_value": 126444,
+      "markup": 5146,
       "markup_pct": 4.1,
       "gst": 3948,
       "per_10g_999": 136082,
-      "price_checked_at": "2026-11-27T14:31:31+05:30",
-      "vs_lowest": 2268
+      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "vs_lowest": 522
     },
     {
       "seller": "Senco Gold",
@@ -77,16 +77,16 @@
       "weight_g": 10.0,
       "purity": 995.0,
       "final_price": 136226,
-      "gold_value": 126421,
-      "markup": 5837,
+      "gold_value": 126444,
+      "markup": 5815,
       "markup_pct": 4.6,
       "gst": 3968,
       "per_10g_999": 136774,
       "seller_gold_value": 125960,
       "seller_making": 6298,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-27T14:31:31+05:30",
-      "vs_lowest": 2960
+      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "vs_lowest": 1214
     },
     {
       "seller": "MMTC-PAMP (via Flipkart)",
@@ -95,13 +95,13 @@
       "weight_g": 10.0,
       "purity": 999.9,
       "final_price": 139170,
-      "gold_value": 127043,
-      "markup": 8073,
-      "markup_pct": 6.4,
+      "gold_value": 127066,
+      "markup": 8050,
+      "markup_pct": 6.3,
       "gst": 4053,
       "per_10g_999": 139045,
-      "price_checked_at": "2026-11-27T14:31:31+05:30",
-      "vs_lowest": 5231
+      "price_checked_at": "2026-11-27T15:01:14+05:30",
+      "vs_lowest": 3485
     }
   ],
   "link_only": [
