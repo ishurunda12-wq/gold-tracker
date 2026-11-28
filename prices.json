@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T10:31:33+05:30",
+  "updated_at": "2026-11-28T11:01:07+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
     "price_per_10g": 125525.0
@@ -11,15 +11,15 @@
       "url": "https://www.pcjeweller.com/products/gcf400010_pc-jeweller-10-gram-24k-(995)-yellow-gold-floral-pattern-rectangular-coin",
       "weight_g": 10.0,
       "purity": 995.0,
-      "final_price": 135092,
+      "final_price": 134452,
       "gold_value": 125022,
-      "markup": 6135,
-      "markup_pct": 4.9,
-      "gst": 3935,
-      "per_10g_999": 135635,
-      "seller_gold_value": 126600,
-      "seller_making": 4558,
-      "price_checked_at": "2026-11-28T10:31:33+05:30",
+      "markup": 5514,
+      "markup_pct": 4.4,
+      "gst": 3916,
+      "per_10g_999": 134993,
+      "seller_gold_value": 126000,
+      "seller_making": 4536,
+      "price_checked_at": "2026-11-28T11:01:07+05:30",
       "vs_lowest": 0
     },
     {
@@ -34,8 +34,8 @@
       "markup_pct": 5.3,
       "gst": 3948,
       "per_10g_999": 136082,
-      "price_checked_at": "2026-11-28T10:31:33+05:30",
-      "vs_lowest": 447
+      "price_checked_at": "2026-11-28T11:01:07+05:30",
+      "vs_lowest": 1089
     },
     {
       "seller": "Kalyan Jewellers (Candere)",
@@ -51,8 +51,8 @@
       "per_10g_999": 137382,
       "seller_gold_value": 128250,
       "seller_making": 5131,
-      "price_checked_at": "2026-11-28T10:31:33+05:30",
-      "vs_lowest": 1747
+      "price_checked_at": "2026-11-28T11:01:07+05:30",
+      "vs_lowest": 2389
     },
     {
       "seller": "Joyalukkas",
@@ -67,8 +67,8 @@
       "gst": 4006,
       "per_10g_999": 137542,
       "in_stock": true,
-      "price_checked_at": "2026-11-28T10:31:33+05:30",
-      "vs_lowest": 1907
+      "price_checked_at": "2026-11-28T11:01:07+05:30",
+      "vs_lowest": 2549
     },
     {
       "seller": "Senco Gold",
@@ -85,8 +85,8 @@
       "seller_gold_value": 127140,
       "seller_making": 6357,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-28T10:31:33+05:30",
-      "vs_lowest": 2420
+      "price_checked_at": "2026-11-28T11:01:07+05:30",
+      "vs_lowest": 3062
     },
     {
       "seller": "MMTC-PAMP (via Flipkart)",
@@ -94,15 +94,14 @@
       "url": "https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
       "weight_g": 10.0,
       "purity": 999.9,
-      "final_price": 140490,
+      "final_price": 139390,
       "gold_value": 125638,
-      "markup": 10760,
-      "markup_pct": 8.6,
-      "gst": 4092,
-      "per_10g_999": 140364,
-      "price_checked_at": "2026-11-28T10:01:08+05:30",
-      "stale": true,
-      "vs_lowest": 4729
+      "markup": 9692,
+      "markup_pct": 7.7,
+      "gst": 4060,
+      "per_10g_999": 139265,
+      "price_checked_at": "2026-11-28T11:01:07+05:30",
+      "vs_lowest": 4272
     }
   ],
   "link_only": [
@@ -123,11 +122,6 @@
       "seller": "CaratLane",
       "error": "no price found on the page",
       "using_last_good_price": false
-    },
-    {
-      "seller": "MMTC-PAMP (via Flipkart)",
-      "error": "429 Client Error: Too Many Requests for url: https://www.flipkart.com/mmtc-pamp-india-pvt-ltd-lakshmi-24-9999-k-10-g-yellow-gold-bar/p/itm76c3c87cc9616",
-      "using_last_good_price": true
     }
   ],
   "skipped": [],
