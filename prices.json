@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T12:31:27+05:30",
+  "updated_at": "2026-11-28T13:01:19+05:30",
   "mcx": {
     "contract": "MCX_GOLDTEN30NOV26FUT",
     "price_per_10g": 125525.0
@@ -19,7 +19,7 @@
       "per_10g_999": 134993,
       "seller_gold_value": 126000,
       "seller_making": 4536,
-      "price_checked_at": "2026-11-28T12:31:27+05:30",
+      "price_checked_at": "2026-11-28T13:01:19+05:30",
       "vs_lowest": 0
     },
     {
@@ -34,7 +34,7 @@
       "markup_pct": 5.3,
       "gst": 3948,
       "per_10g_999": 136082,
-      "price_checked_at": "2026-11-28T12:31:27+05:30",
+      "price_checked_at": "2026-11-28T13:01:19+05:30",
       "vs_lowest": 1089
     },
     {
@@ -50,7 +50,7 @@
       "gst": 3989,
       "per_10g_999": 136953,
       "in_stock": true,
-      "price_checked_at": "2026-11-28T12:31:27+05:30",
+      "price_checked_at": "2026-11-28T13:01:19+05:30",
       "vs_lowest": 1960
     },
     {
@@ -67,7 +67,7 @@
       "per_10g_999": 137382,
       "seller_gold_value": 128250,
       "seller_making": 5131,
-      "price_checked_at": "2026-11-28T12:31:27+05:30",
+      "price_checked_at": "2026-11-28T13:01:19+05:30",
       "vs_lowest": 2389
     },
     {
@@ -76,17 +76,17 @@
       "url": "https://sencogoldanddiamonds.com/jewellery/10g-laxmi-24k-(995)-yellow-gold-precious-coin",
       "weight_g": 10.0,
       "purity": 995.0,
-      "final_price": 137502,
+      "final_price": 137200,
       "gold_value": 125022,
-      "markup": 8475,
-      "markup_pct": 6.8,
-      "gst": 4005,
-      "per_10g_999": 138055,
-      "seller_gold_value": 127140,
-      "seller_making": 6357,
+      "markup": 8181,
+      "markup_pct": 6.5,
+      "gst": 3996,
+      "per_10g_999": 137752,
+      "seller_gold_value": 126860,
+      "seller_making": 6343,
       "making_label": "making_charge_value",
-      "price_checked_at": "2026-11-28T12:31:27+05:30",
-      "vs_lowest": 3062
+      "price_checked_at": "2026-11-28T13:01:19+05:30",
+      "vs_lowest": 2759
     },
     {
       "seller": "MMTC-PAMP (via Flipkart)",
